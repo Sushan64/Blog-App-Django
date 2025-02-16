@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<article class="post">
+<h1>{{ post.title }}</h1>
+<time class="text-secondary
+  ">Published: {{ post.published_date }}</time>
+  <img class="img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+<p>{{ post.text|linebreaksbr }}</p>
+</article>
+{% endblock %}

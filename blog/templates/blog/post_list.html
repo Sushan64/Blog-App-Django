@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h1 class="fw-bold text-center text-decoration-underline">All Post</h1>
+{% for post in posts %}
+<a href="{% url 'post_details' pk=post.pk%}">
+<img class="img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }}"></a>
+ <h2><a class="red text-decoration-none" href="{% url 'post_details' pk=post.pk %}">{{ post.title }}</h2></a>
+<p class="text-secondary">{{ post.meta_description }} <a href="{% url 'post_details' pk=post.pk%}"> Read More -></a> </p>
+
+{% endfor %}
+{% endblock %}
